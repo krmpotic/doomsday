@@ -58,7 +58,7 @@ func main() {
 
 	fmt.Printf("%d\n", t.Year())
 	guessWeekday(doomsday(t.Year()))
-	fmt.Printf("%d.%d.%d\n", t.Day(), t.Month(), t.Year())
+	fmt.Printf("%d-%d-%d\n", t.Year(), t.Month(), t.Day())
 	guessWeekday(t.Weekday())
 }
 
