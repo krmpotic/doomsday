@@ -12,8 +12,8 @@ var yearMin, yearMax int
 var helpFlag = flag.Bool("d", false, "print doomsdays")
 
 func init() {
-	flag.IntVar(&yearMin, "s", 1900, "min year")
-	flag.IntVar(&yearMax, "e", 2100, "max year")
+	flag.IntVar(&yearMin, "min", 1800, "min year")
+	flag.IntVar(&yearMax, "max", 2100, "max year")
 
 	rand.Seed(time.Now().Unix())
 }
