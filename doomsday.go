@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"math/rand"
 	"time"
+	"os"
 )
 
 var yearMin, yearMax int
@@ -62,13 +63,12 @@ func main() {
 }
 
 func guessWeekday(goal time.Weekday) {
-	for {
-		var guess int
-		fmt.Printf("Sun-Sat [0-6]? ")
-		fmt.Scanf("%d", &guess)
-		if guess == int(goal) {
-			fmt.Printf("Correct, it was a %s\n", goal)
-			break
-		}
+	var guess int
+	fmt.Printf("Sun-Sat [0-6]? ")
+	fmt.Scanf("%d", &guess)
+	if guess != int(goal) {
+		fmt.Printf("Wrong, it was a %s\n", goal)
+		os.Exit(1)
 	}
+	fmt.Printf("Correct, it was a %s\n", goal)
 }
